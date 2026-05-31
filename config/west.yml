@@ -1,7 +1,9 @@
 manifest:
+  defaults:
+    revision: v0.3
   remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
+    - name: cormoran
+      url-base: https://github.com/cormoran
     - name: sayu-hub
       url-base: https://github.com/sayu-hub
     - name: badjeff    # <-- PMW3610
@@ -14,8 +16,8 @@ manifest:
       url-base: https://github.com/zettaface
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: v0.3.0
+      remote: cormoran
+      revision: v0.3-branch+dya
       import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: badjeff
@@ -25,6 +27,19 @@ manifest:
       revision: v0.3
     - name: zmk-input-processor-keybind
       remote: zettaface
+      revision: main
+    # DYA Studio モジュール（すべて cormoran リポジトリ）
+    - name: zmk-module-ble-management
+      remote: cormoran
+      revision: main
+    - name: zmk-module-battery-history
+      remote: cormoran
+      revision: main
+    - name: zmk-module-settings-rpc
+      remote: cormoran
+      revision: main
+    - name: zmk-module-runtime-input-processor
+      remote: cormoran
       revision: main
   self:
     path: config
