@@ -136,9 +136,10 @@
         status = "disabled";
         device = <&trackball_peripheral_split>;
         input-processors = 
-            <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,        //this gets it to the default installation orientation
-            <&zip_xy_scaler 1 7>,                               //感度を1/7倍に変更(スクロールが遅くなる)
-            <&zip_xy_to_scroll_mapper>;                         //スクロールモードに変更
+            <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>;
+            //<&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,        //this gets it to the default installation orientation
+            //<&zip_xy_scaler 1 7>,                               //感度を1/7倍に変更(スクロールが遅くなる)
+            //<&zip_xy_to_scroll_mapper>;                         //スクロールモードに変更
             //<&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;   //invert vertical scrolling so that the view moves in the same direction as the top of the trackball.
        
     };
