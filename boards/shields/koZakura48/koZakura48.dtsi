@@ -155,7 +155,7 @@
         /* スクロールレイヤー: 指定レイヤーでカーソル移動をスクロールに変換 */
         scroller {
             layers = <6>;
-            input-processors = <&zip_xy_to_scroll_mapper &scroll_runtime_input_processor>;
+            input-processors = <&zip_xy_to_scroll_mapper &scroll_runtime_input_processor_l>;
         };
     };
 
@@ -182,6 +182,24 @@
 		scale-divisor = <60>;
 		#input-processor-cells = <0>;
 	};  
+
+	scroll_runtime_input_processor_l: scroll_runtime_input_processor_l {
+		compatible = "zmk,input-processor-runtime";
+        processor-label = "ScrL";
+		type = <INPUT_EV_REL>;
+		track-remainders;
+		scale-divisor = <60>;
+		#input-processor-cells = <0>;
+	};   
+
+	scroll_runtime_input_processor: scroll_runtime_input_processor {
+		compatible = "zmk,input-processor-runtime";
+        processor-label = "Scr";
+		type = <INPUT_EV_REL>;
+		track-remainders;
+		scale-divisor = <60>;
+		#input-processor-cells = <0>;
+	};   
 };
 
 &mouse_runtime_input_processor {
