@@ -1,4 +1,6 @@
 manifest:
+  defaults:
+      revision:v0.3
   remotes:
     - name: cormoran
       url-base: https://github.com/cormoran
@@ -15,7 +17,7 @@ manifest:
   projects:
     - name: zmk
       remote: cormoran
-      revision: v0.3+custom-studio-protocol
+      revision: v0.3-branch+dya
       import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: badjeff
