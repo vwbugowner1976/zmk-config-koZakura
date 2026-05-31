@@ -135,7 +135,8 @@
         compatible = "zmk,input-listener";
         status = "disabled";
         device = <&trackball_peripheral_split>;
-        input-processors = <&mouse_runtime_input_processor_r>;
+        input-processors = <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>
+            ,<&mouse_runtime_input_processor_r>;
 
         /* スクロールレイヤー: 指定レイヤーでカーソル移動をスクロールに変換 */
         scroller {
@@ -148,7 +149,8 @@
     trackball_central_listener: trackball_central_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
-        input-processors = <&mouse_runtime_input_processor>;
+        input-processors = <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>
+            ,<&mouse_runtime_input_processor>;
 
         /* スクロールレイヤー: 指定レイヤーでカーソル移動をスクロールに変換 */
         scroller {
@@ -162,4 +164,32 @@
         sensors = <&left_encoder &right_encoder>;
         triggers-per-rotation = <10>;
       };
-    };
+
+    mouse_runtime_input_processor: mouse_runtime_input_processor {
+		compatible = "zmk,input-processor-runtime";
+        processor-label = "MouseL";
+		type = <INPUT_EV_REL>;
+		track-remainders;
+		scale-divisor = <60>;
+		#input-processor-cells = <0>;
+	};   
+
+    mouse_runtime_input_processor_r: mouse_runtime_input_processor_r {
+		compatible = "zmk,input-processor-runtime";
+        processor-label = "MouseR";
+		type = <INPUT_EV_REL>;
+		track-remainders;
+		scale-divisor = <60>;
+		#input-processor-cells = <0>;
+	};  
+};
+
+&mouse_runtime_input_processor_l {
+        x-codes = <INPUT_REL_X>;
+        y-codes = <INPUT_REL_Y>;
+};
+
+&mouse_runtime_input_processor_r {
+        x-codes = <INPUT_REL_X>;
+        y-codes = <INPUT_REL_Y>;
+};
