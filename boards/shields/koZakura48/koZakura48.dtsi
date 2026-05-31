@@ -141,7 +141,7 @@
         /* スクロールレイヤー: 指定レイヤーでカーソル移動をスクロールに変換 */
         scroller {
             layers = <6>;
-            input-processors = <&zip_xy_to_scroll_mapper &scroll_runtime_input_processor>;
+            input-processors = <&zip_xy_to_scroll_mapper &scroll_runtime_input_processor_r>;
         };
     };
     
@@ -192,9 +192,9 @@
 		#input-processor-cells = <0>;
 	};   
 
-	scroll_runtime_input_processor: scroll_runtime_input_processor {
+	scroll_runtime_input_processor_r: scroll_runtime_input_processor_r {
 		compatible = "zmk,input-processor-runtime";
-        processor-label = "Scr";
+        processor-label = "ScrR";
 		type = <INPUT_EV_REL>;
 		track-remainders;
 		scale-divisor = <60>;
