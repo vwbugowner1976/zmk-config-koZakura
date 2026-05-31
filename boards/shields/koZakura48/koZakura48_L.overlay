@@ -60,16 +60,11 @@
 &trackball_central_listener {
     status = "okay";
     device = <&trackball_central>;
-     input-processors =
-        <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>;
 };
 
 // 右手センサー（Peripheral経由でCentralに届く）
 &trackball_peripheral_listener {
     status = "okay";
     // device は dtsi で trackball_peripheral_split を指しているのでそのままでOK
-    input-processors =
-        <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>;
-        // zip_xy_to_scroll_mapper は削除！カーソルにしたいので
 };
 
