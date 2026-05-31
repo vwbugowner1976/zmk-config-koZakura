@@ -20,6 +20,7 @@
 include:
   - board: seeeduino_xiao_ble
     shield: koZakura48_R rgbled_adapter
+    snippet: zmk-usb-logging
   - board: seeeduino_xiao_ble
     shield: koZakura48_L rgbled_adapter
     snippet: zmk-usb-logging studio-rpc-usb-uart
