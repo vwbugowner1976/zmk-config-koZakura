@@ -149,7 +149,6 @@
             ,<&mouse_runtime_input_processor>;
 
         /* スクロールレイヤー: 指定レイヤーでカーソル移動をスクロールに変換 */
-        };
     };
 
     sensors: sensors {
