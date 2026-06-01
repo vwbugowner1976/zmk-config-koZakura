@@ -136,8 +136,7 @@
         compatible = "zmk,input-listener";
         status = "disabled";
         device = <&trackball_peripheral_split>;
-        input-processors = <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>
-            ,<&mouse_runtime_input_processor_r>;
+        input-processors = <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP &mouse_runtime_input_processor_r>;
 
         /* スクロールレイヤー: 指定レイヤーでカーソル移動をスクロールに変換 */
     };
@@ -146,8 +145,7 @@
     trackball_central_listener: trackball_central_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
-        input-processors = <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>
-            ,<&mouse_runtime_input_processor_r>;
+        input-processors = <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP &mouse_runtime_input_processor>;
 
         /* スクロールレイヤー: 指定レイヤーでカーソル移動をスクロールに変換 */
     };
