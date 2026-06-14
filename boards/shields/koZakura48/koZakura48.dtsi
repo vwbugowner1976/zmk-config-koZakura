@@ -104,6 +104,7 @@
                 , <&gpio1 1 GPIO_ACTIVE_HIGH>
                 , <&xiao_d 2 GPIO_ACTIVE_HIGH>
                 ;
+        wakeup-source;
     };
 
     left_encoder: encoder_left {
